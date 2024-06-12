@@ -4,7 +4,7 @@ import request from '../config/axios'
 
 export const getListUser = async (params: UserListQueryInputType) => {
   try {
-    const response = await request.get<UserListType>('/users/list', { params })
+    const response = await request.get<UserListType>('/user', { params })
     return response.data
   } catch (error) {
     throw error
@@ -13,7 +13,7 @@ export const getListUser = async (params: UserListQueryInputType) => {
 
 export const getUserDetail = async ({ column, sort_by, userId }: QueryInputUserDetailType) => {
   try {
-    const response = await request.get<UserDetailResponseType>(`/users/detail/${userId}`, {
+    const response = await request.get<UserDetailResponseType>(`/user/${userId}`, {
       params: {
         sort_by,
         column,
@@ -27,7 +27,7 @@ export const getUserDetail = async ({ column, sort_by, userId }: QueryInputUserD
 
 export const deleteUser = async (userId: string) => {
   try {
-    const response = await request.delete(`/users/delete/${userId}`)
+    const response = await request.delete(`/user/${userId}`)
     return response.data
   } catch (error) {
     throw error

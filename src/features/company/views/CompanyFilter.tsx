@@ -11,7 +11,7 @@ export function CompanyFilter() {
     {
       field: 'search',
       type: 'text',
-      placeholder: 'フリーワード検索',
+      placeholder: 'Search',
       sx: {
         width: 280,
       },

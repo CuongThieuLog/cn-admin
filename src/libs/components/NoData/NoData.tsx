@@ -6,7 +6,7 @@ const NoData = () => {
   return (
     <Stack justifyContent="center" alignItems="center" height="90vh">
       <Typography variant="h3" color="mono.600">
-        データがありません
+        No data!
       </Typography>
     </Stack>
   )

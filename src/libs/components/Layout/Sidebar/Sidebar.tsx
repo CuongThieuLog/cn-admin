@@ -40,7 +40,7 @@ const Sidebar = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Typography variant="h2">ロゴ</Typography>
+        <Typography variant="h2">CN</Typography>
 
         <Stack
           width={68}
@@ -50,7 +50,7 @@ const Sidebar = () => {
           alignItems="center"
         >
           <Typography variant="subtitle1" lineHeight="18px">
-            管理画面
+            Booking
           </Typography>
         </Stack>
       </Stack>
@@ -117,7 +117,7 @@ const Sidebar = () => {
           </IconButton>
         </Stack>
         <Typography fontSize={9} lineHeight="11px" fontWeight={500} color="base.white">
-          ©︎ xxxx All Rights Reserved.
+          ©︎ xxxx CN Booking TTC.
         </Typography>
       </Stack>
 

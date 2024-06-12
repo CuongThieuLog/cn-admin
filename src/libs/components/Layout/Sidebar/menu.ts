@@ -17,7 +17,7 @@ export const menus: MenuType[] = [
   },
   {
     href: '/users',
-    title: 'ユーザー一覧',
+    title: 'User',
     icon: '/assets/svgs/user.svg',
     active_icon: '/assets/svgs/user_active.svg',
   },

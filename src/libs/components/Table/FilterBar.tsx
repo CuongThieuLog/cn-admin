@@ -100,7 +100,7 @@ export function FilterBar<FilterInput extends FieldValues, TData>({
   columns,
   createPath,
   onCreate,
-  createBtnText = '新規',
+  createBtnText = 'New',
   buttonSearchUnderButtonCreate = false,
 }: FilterBarProps<FilterInput>) {
   const { handleChangeParams } = useTableContext<TData, FilterInput>()
@@ -258,7 +258,7 @@ export function FilterBar<FilterInput extends FieldValues, TData>({
 
         {!buttonSearchUnderButtonCreate && (
           <ButtonSearch variant="outlined" type="submit">
-            検索
+            Search
           </ButtonSearch>
         )}
       </Stack>
@@ -282,7 +282,7 @@ export function FilterBar<FilterInput extends FieldValues, TData>({
 
         {buttonSearchUnderButtonCreate && (
           <ButtonSearch variant="outlined" type="submit">
-            検索
+            Search
           </ButtonSearch>
         )}
       </Stack>

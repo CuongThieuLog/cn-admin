@@ -12,7 +12,7 @@ export function AdminFilter() {
     {
       field: 'search',
       type: 'text',
-      placeholder: 'フリーワード検索',
+      placeholder: 'Search',
       defaultValue: '',
       sx: {
         width: 320,

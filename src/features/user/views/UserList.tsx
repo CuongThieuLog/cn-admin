@@ -18,7 +18,7 @@ const UserList = () => {
 
   const columns: ColumnDef<UserType>[] = [
     {
-      header: 'ユーザーID',
+      header: 'ID',
       accessorKey: 'id',
       meta: {
         width: 72,

@@ -11,7 +11,7 @@ export function RealEstateFilter() {
     {
       field: 'search',
       type: 'text',
-      placeholder: 'フリーワード検索',
+      placeholder: 'Search',
       defaultValue: '',
       sx: { width: 200 },
       fieldOptions: {

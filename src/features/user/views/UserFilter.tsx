@@ -16,7 +16,7 @@ export function UserFilter() {
     {
       field: 'search',
       type: 'text',
-      placeholder: 'フリーワード検索',
+      placeholder: 'Search',
       defaultValue: '',
       sx: { width: 240 },
       fieldOptions: {
@@ -99,7 +99,7 @@ export function UserFilter() {
   return (
     <Stack spacing={3}>
       <Typography color="mono.600" variant="h2">
-        ユーザー一覧
+        List Users
       </Typography>
 
       <FilterBar columns={filterColumn} createPath="users/create" buttonSearchUnderButtonCreate />

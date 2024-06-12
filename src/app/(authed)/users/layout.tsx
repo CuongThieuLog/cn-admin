@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ユーザー一覧',
+  title: 'User',
 }
 
 export default function Page({ children }: { children: React.ReactNode }) {
