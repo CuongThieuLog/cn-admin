@@ -9,15 +9,25 @@ const AdminInfoSchema = z.object({
   id: z.string(),
   name: z.string(),
   email: z.string(),
-  is_super: z.number(),
+  email_verified_at: z.string(),
+  two_factor_confirmed_at: z.string(),
+  current_team_id: z.string(),
+  profile_photo_path: z.string(),
+  role: z.string(),
+  is_active: z.string(),
+  google_id: z.string(),
+  facebook_id: z.string(),
+  profile_photo_url: z.string(),
 })
 
 export const LoginOutputSchema = z.object({
-  token_type: z.string(),
-  expires_in: z.number(),
-  access_token: z.string(),
-  refresh_token: z.string(),
-  admin_info: AdminInfoSchema,
+  data: z.object({
+    token_type: z.string(),
+    expires_in: z.number(),
+    access_token: z.string(),
+    refresh_token: z.string(),
+    user: AdminInfoSchema,
+  }),
 })
 
 export const AdminResponseSchema = z.object({
