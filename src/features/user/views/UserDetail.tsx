@@ -180,11 +180,11 @@ const UserDetail = () => {
           <Stack spacing="1px">
             <Stack direction="row" gap={4}>
               <DetailItem label="ID" value={data?.id} isPending={isLoading} />
-              <DetailItem label="メールアドレス" value={data?.email} isPending={isLoading} />
+              <DetailItem label="Email" value={data?.email} isPending={isLoading} />
             </Stack>
 
             <Stack direction="row" gap={4}>
-              <DetailItem label="名前" value={data?.name} isPending={isLoading} />
+              <DetailItem label="User name" value={data?.name} isPending={isLoading} />
               <DetailItem
                 label="電話番号"
                 value={data?.tel ? data.tel : '-'}

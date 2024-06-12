@@ -36,7 +36,7 @@ const UserList = () => {
       },
     },
     {
-      header: '氏名',
+      header: 'User name',
       accessorKey: 'name',
       meta: {
         width: 120,
@@ -56,7 +56,7 @@ const UserList = () => {
       },
     },
     {
-      header: 'メールアドレス',
+      header: 'Email',
       accessorKey: 'email',
       meta: {
         headStyle: {
