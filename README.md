@@ -1,4 +1,4 @@
-# r-assets-admin
+# CN ADMIN - Thiều Trần Cương
 
 ## Installation
 
