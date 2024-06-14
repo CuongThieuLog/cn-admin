@@ -20,18 +20,14 @@ export const HAS_ASSETS_OPTIONS = [
   },
 ]
 
-export const WILLINGNESS_OPTIONS = [
+export const ACCOUNT_STATUS = [
   {
-    value: 1,
-    label: '無し',
+    value: '0',
+    label: 'Un active',
   },
   {
-    value: 2,
-    label: '有り',
-  },
-  {
-    value: 3,
-    label: '検討中',
+    value: '1',
+    label: 'Active',
   },
 ]
 

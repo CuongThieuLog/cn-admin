@@ -9,12 +9,9 @@ export type UserType = {
   id: number
   name?: string
   email: string
-  tel?: string
-  willing?: number
-  income?: number
-  has_assets?: string | number
-  amount_used?: string
-  is_paid?: string | number
+  created_at?: string
+  profile_photo_url?: string
+  is_active?: string | number
 }
 
 export type UserListType = {
@@ -29,6 +26,7 @@ export type UserSearchInputType = {
   willing?: number
   number_of_application_from?: string
   number_of_application_to?: string
+  is_active?: string | number
   page?: string
   per_page?: string
 } & PaginationType

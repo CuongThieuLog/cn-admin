@@ -1,15 +1,12 @@
 'use client'
 
+import { StatusTag } from '@/libs/components/StatusTag'
 import { ReactTable } from '@/libs/components/Table'
+import { formatDate } from '@/utils/format'
+import { Stack } from '@mui/material'
 import { ColumnDef } from '@tanstack/react-table'
 import { useRouter } from 'next/navigation'
-import {
-  convertIncomeText,
-  convertIsPaidText,
-  convertTextHasAssets,
-  convertWillingText,
-  useUserListQuery,
-} from '../hooks'
+import { useUserListQuery } from '../hooks'
 import { UserType } from '../type'
 
 const UserList = () => {
@@ -21,9 +18,9 @@ const UserList = () => {
       header: 'ID',
       accessorKey: 'id',
       meta: {
-        width: 72,
+        width: 56,
         headStyle: {
-          paddingLeft: 4,
+          padding: '0 24px',
         },
         cellStyle: {
           width: 56,
@@ -39,20 +36,31 @@ const UserList = () => {
       header: 'User name',
       accessorKey: 'name',
       meta: {
-        width: 120,
         headStyle: {
-          padding: '0 8px',
+          padding: '0 16px',
         },
         cellStyle: {
-          width: 104,
+          width: 200,
           fontSize: 14,
           lineHeight: '20px',
           fontWeight: 400,
-          padding: '0 8px',
+          padding: '0 16px',
         },
       },
       cell: ({ row }) => {
-        return row.original.name ? row.original.name : '-'
+        return (
+          <>
+            <Stack flexDirection={'row'} alignItems={'center'} columnGap={1}>
+              <Stack
+                borderRadius={'50%'}
+                width={'20%'}
+                component={'img'}
+                src={row.original?.profile_photo_url}
+              />
+              <p>{row.original.name ? row.original.name : '-'}</p>
+            </Stack>
+          </>
+        )
       },
     },
     {
@@ -71,103 +79,30 @@ const UserList = () => {
       },
     },
     {
-      header: '電話番号',
-      accessorKey: 'tel',
+      header: 'Account status',
+      accessorKey: 'status',
       meta: {
-        width: 120,
-        headStyle: {
-          padding: '0 8px',
-        },
-        cellStyle: {
-          fontSize: 14,
-          lineHeight: '20px',
-          fontWeight: 400,
-          width: 104,
-          padding: '0 8px',
-        },
-      },
-      cell: ({ row }) => {
-        return row.original.tel ? row.original.tel : '-'
-      },
-    },
-    {
-      header: '購入意欲',
-      accessorKey: 'willing',
-      meta: {
-        width: 148,
-        headStyle: {
-          padding: '0 8px',
-        },
-        cellStyle: {
-          fontSize: 12,
-          lineHeight: '16px',
-          fontWeight: 400,
-          width: 104,
-          padding: '0 8px',
-        },
-      },
-      cell: ({ row }) => {
-        return convertWillingText(row.original.willing)
-      },
-    },
-    {
-      header: '年収（万）',
-      accessorKey: 'income',
-      meta: {
-        width: 80,
-        cellStyle: {
-          fontSize: 12,
-          lineHeight: '16px',
-          fontWeight: 400,
-          width: 64,
-          padding: '0 8px',
-        },
-      },
-      cell: ({ row }) => {
-        return convertIncomeText(row.original.income)
-      },
-    },
-    {
-      header: 'マンション\n所有',
-      accessorKey: 'has_assets',
-      meta: {
-        width: 80,
-        cellStyle: {
-          fontSize: 12,
-          lineHeight: '16px',
-          fontWeight: 400,
-          padding: '0 8px',
-        },
-      },
-      cell: ({ row }) => {
-        return convertTextHasAssets(row.original.has_assets)
-      },
-    },
-    {
-      header: '申込数',
-      accessorKey: 'amount_used',
-      meta: {
-        width: 64,
-        headStyle: {
-          paddingLeft: '8px',
-        },
+        headStyle: {},
         cellStyle: {
           fontSize: 14,
           lineHeight: '20px',
           fontWeight: 400,
           padding: '0 8px',
-          textAlign: 'end',
         },
       },
-      cell: () => {
-        return '-'
+      cell: ({ row }) => {
+        return (
+          <StatusTag
+            text={row.original.is_active == 1 ? 'Active' : 'Un Active'}
+            color={row.original.is_active == 1 ? 'green' : 'red'}
+          />
+        )
       },
     },
     {
-      header: '料金プラン',
-      accessorKey: 'is_paid',
+      header: 'Created at',
+      accessorKey: 'created_at',
       meta: {
-        width: 80,
         cellStyle: {
           fontSize: 14,
           lineHeight: '20px',
@@ -177,7 +112,7 @@ const UserList = () => {
         },
       },
       cell: ({ row }) => {
-        return convertIsPaidText(row.original.is_paid)
+        return formatDate(row.original.created_at as string)
       },
     },
   ]

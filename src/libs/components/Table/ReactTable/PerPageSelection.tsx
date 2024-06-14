@@ -1,5 +1,5 @@
 import { mono } from '@/libs/config/theme'
-import { MenuItem, Select, Stack, Typography } from '@mui/material'
+import { MenuItem, Select, Stack } from '@mui/material'
 import Image from 'next/image'
 import { usePaginationHandler } from './hooks'
 
@@ -62,10 +62,6 @@ const PerPageSelect = () => {
           </MenuItem>
         ))}
       </Select>
-
-      <Typography variant="body2" color={mono[600]}>
-        件ずつ表示
-      </Typography>
     </Stack>
   )
 }
