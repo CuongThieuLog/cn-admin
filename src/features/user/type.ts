@@ -9,9 +9,9 @@ export type UserType = {
   id: number
   name?: string
   email: string
-  created_at?: string
-  profile_photo_url?: string
   is_active?: string | number
+  profile_photo_url?: string
+  created_at?: string
 }
 
 export type UserListType = {
@@ -20,12 +20,6 @@ export type UserListType = {
 
 export type UserSearchInputType = {
   search?: string
-  has_assets?: number
-  income?: number
-  is_paid?: number
-  willing?: number
-  number_of_application_from?: string
-  number_of_application_to?: string
   is_active?: string | number
   page?: string
   per_page?: string
@@ -48,16 +42,9 @@ export type BookMarkType = {
 export type UserDetailType = {
   id: string
   name: string
-  birthday: string
-  address: string
-  has_assets: 0 | 1
-  asset_number: number
   email: string
-  tel: string
-  income: number
-  willing: number
-  asset_name: string
-  book_marks: BookMarkType[]
+  is_active?: string | number
+  created_at: string
 }
 
 export type UserDetailResponseType = {

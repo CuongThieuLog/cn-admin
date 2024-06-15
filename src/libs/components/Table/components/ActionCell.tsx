@@ -1,4 +1,4 @@
-import { Stack } from '@mui/material'
+import { IconButton, Stack } from '@mui/material'
 import { RowData } from '@tanstack/react-table'
 import { usePathname, useRouter } from 'next/navigation'
 import DetailIcon from 'public/assets/svgs/detail.svg'
@@ -32,7 +32,13 @@ function ActionCell<T extends RowData, TValue = unknown>({
       {actionConfig.renderLeft && actionConfig.renderLeft(row)}
 
       {hasDetail && (
-        <ButtonAction onClick={onDetail}>{actionConfig.detailIcon || <DetailIcon />}</ButtonAction>
+        <ButtonAction onClick={onDetail}>
+          {actionConfig.detailIcon || (
+            <IconButton>
+              <DetailIcon />
+            </IconButton>
+          )}
+        </ButtonAction>
       )}
 
       {actionConfig.renderRight && actionConfig.renderRight(row)}

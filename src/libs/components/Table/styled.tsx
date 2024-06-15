@@ -66,13 +66,22 @@ const ButtonCreate = styled(Button)(({ theme }) => ({
   height: 40,
   padding: 0,
   fontSize: '14px',
+  transition: '0.3s ease-in-out',
   '&:hover': {
     background: theme.palette.base.primary,
     borderColor: theme.palette.base.primary,
+    opacity: 0.8,
   },
   '&:focus': {
     background: theme.palette.base.primary,
     borderColor: theme.palette.base.primary,
+    opacity: 0.8,
+  },
+  '&:disabled': {
+    background: theme.palette.grey[300],
+    borderColor: theme.palette.grey[300],
+    color: theme.palette.text.disabled,
+    cursor: 'not-allowed',
   },
 }))
 

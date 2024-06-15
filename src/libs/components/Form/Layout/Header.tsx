@@ -58,7 +58,7 @@ const Header = (props: HeaderProps) => {
               onClick={() => router.push(editPath)}
               disabled={isPending}
             >
-              編集
+              Edit
             </ButtonAction>
           )}
 
@@ -69,7 +69,7 @@ const Header = (props: HeaderProps) => {
               onClick={deleteFunction}
               disabled={isPending}
             >
-              削除
+              Del
             </ButtonAction>
           )}
         </Stack>

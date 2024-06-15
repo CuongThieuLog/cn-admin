@@ -63,6 +63,7 @@ export type FilterBarProps<F extends FieldValues> = {
   onCreate?: () => void
   createBtnText?: string
   buttonSearchUnderButtonCreate?: boolean
+  isDisabledCreate?: boolean
 }
 
 function getColumnByField<F extends FieldValues>(columns: FilterColumn<F>[], field: keyof F) {
@@ -102,6 +103,7 @@ export function FilterBar<FilterInput extends FieldValues, TData>({
   onCreate,
   createBtnText = 'New',
   buttonSearchUnderButtonCreate = false,
+  isDisabledCreate = false,
 }: FilterBarProps<FilterInput>) {
   const { handleChangeParams } = useTableContext<TData, FilterInput>()
   const { handleSubmit, register, control } = useForm<FilterInput>({})
@@ -269,6 +271,7 @@ export function FilterBar<FilterInput extends FieldValues, TData>({
             variant="contained"
             startIcon={<AddIcon />}
             onClick={() => route.push(createPath)}
+            disabled={isDisabledCreate}
           >
             {createBtnText}
           </ButtonCreate>

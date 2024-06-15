@@ -39,7 +39,12 @@ export function UserFilter() {
         List Users
       </Typography>
 
-      <FilterBar columns={filterColumn} createPath="users/create" buttonSearchUnderButtonCreate />
+      <FilterBar
+        columns={filterColumn}
+        createPath="users/create"
+        isDisabledCreate={true}
+        buttonSearchUnderButtonCreate
+      />
     </Stack>
   )
 }
