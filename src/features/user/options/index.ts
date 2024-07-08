@@ -31,6 +31,25 @@ export const ACCOUNT_STATUS = [
   },
 ]
 
+export const ROLES = [
+  {
+    value: '0',
+    label: 'User',
+  },
+  {
+    value: '1',
+    label: 'Admin',
+  },
+  {
+    value: '2',
+    label: 'Manager',
+  },
+  {
+    value: '3',
+    label: 'Staff',
+  },
+]
+
 export const INCOME_OPTIONS = [
   {
     value: 1,

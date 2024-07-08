@@ -132,7 +132,7 @@ function TableBottomTab() {
             gap={2}
           >
             <ButtonActionTable variant="outlined" onClick={handleCloseModal}>
-              キャンセル
+              Cancel
             </ButtonActionTable>
 
             {hasCopyFunction && (

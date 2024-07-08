@@ -123,11 +123,11 @@ const Sidebar = () => {
 
       <Modal
         open={open}
-        title="ログアウト"
-        textSubmit="ログアウトする"
+        title="Logout"
+        textSubmit="Submit"
         handleSubmit={handleLogout}
         handleCloseModal={handleCloseModal}
-        description="ログアウトしてよろしいですか？"
+        description="Are you sure you want to logout?"
         isLoading={loading}
       />
     </Stack>

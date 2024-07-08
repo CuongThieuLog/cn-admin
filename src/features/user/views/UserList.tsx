@@ -6,6 +6,7 @@ import { formatDate } from '@/utils/format'
 import { Stack } from '@mui/material'
 import { ColumnDef } from '@tanstack/react-table'
 import { useRouter } from 'next/navigation'
+import { getColorRole, getTextRole } from '../constants'
 import { useUserListQuery } from '../hooks'
 import { UserType } from '../type'
 
@@ -76,6 +77,26 @@ const UserList = () => {
           fontWeight: 400,
           padding: '0 8px',
         },
+      },
+    },
+    {
+      header: 'Role',
+      accessorKey: 'role',
+      meta: {
+        headStyle: {},
+        cellStyle: {
+          fontSize: 14,
+          lineHeight: '20px',
+          fontWeight: 400,
+        },
+      },
+      cell: ({ row }) => {
+        return (
+          <StatusTag
+            text={getTextRole(row.original?.role ?? 'Unknown')}
+            color={getColorRole(row.original?.role) as any}
+          />
+        )
       },
     },
     {

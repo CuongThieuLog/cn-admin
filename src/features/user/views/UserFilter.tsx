@@ -4,7 +4,7 @@ import { FilterBar, FilterColumn } from '@/libs/components/Table/FilterBar'
 import { ExVoid } from '@/libs/types/utils'
 import { Stack, Typography } from '@mui/material'
 import { UserSearchInputType } from '..'
-import { ACCOUNT_STATUS } from '../options'
+import { ACCOUNT_STATUS, ROLES } from '../options'
 
 export function UserFilter() {
   const filterColumn: FilterColumn<ExVoid<UserSearchInputType>>[] = [
@@ -17,6 +17,18 @@ export function UserFilter() {
       fieldOptions: {
         searchIcon: true,
         hasLine: true,
+      },
+    },
+    {
+      field: 'role',
+      type: 'select',
+      placeholder: 'Role...',
+      defaultValue: '',
+      options: ROLES,
+      label: 'Role',
+      sx: { width: 240 },
+      fieldOptions: {
+        groupField: true,
       },
     },
     {
@@ -36,7 +48,7 @@ export function UserFilter() {
   return (
     <Stack spacing={3}>
       <Typography color="mono.600" variant="h2">
-        List Users
+        List
       </Typography>
 
       <FilterBar

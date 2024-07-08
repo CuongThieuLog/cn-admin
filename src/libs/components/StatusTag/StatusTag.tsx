@@ -1,7 +1,7 @@
 import { statusColors } from '@/libs/config/theme'
 import { Stack, Typography } from '@mui/material'
 
-export type StatusColorType = 'red' | 'grey' | 'yellow' | 'green'
+export type StatusColorType = 'red' | 'grey' | 'yellow' | 'green' | 'blue'
 type StatusTagProps = { color: StatusColorType; text: string; width?: string }
 
 const colorStatusMap = {
@@ -20,6 +20,10 @@ const colorStatusMap = {
   green: {
     bgColor: statusColors.success_pale,
     color: statusColors.success,
+  },
+  blue: {
+    bgColor: '#89CFF0',
+    color: '#0476D0',
   },
 }
 

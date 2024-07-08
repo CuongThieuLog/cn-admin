@@ -110,7 +110,7 @@ function DatePicker<T extends FieldValues>({
             '&& .MuiInputBase-root': {
               paddingRight: '6px',
               '&.Mui-disabled': {
-                color: mono[600] + '!important',
+                color: mono[200] + '!important',
               },
             },
             '&& .Mui-focused fieldset': {
@@ -118,7 +118,7 @@ function DatePicker<T extends FieldValues>({
               borderWidth: 1,
             },
             '&& .Mui-disabled': {
-              WebkitTextFillColor: mono[600],
+              WebkitTextFillColor: mono[200],
               borderColor: base.separate_nav + '!important',
             },
             '& .MuiOutlinedInput-input': {

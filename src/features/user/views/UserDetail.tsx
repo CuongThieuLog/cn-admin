@@ -8,6 +8,7 @@ import { Stack, Typography } from '@mui/material'
 import { useParams, useRouter } from 'next/navigation'
 import BookMark from 'public/assets/svgs/book_mark.svg'
 import { useState } from 'react'
+import { getColorRole, getTextRole } from '../constants'
 import { useDeleteUser, useUserDetailQuery } from '../hooks'
 
 const UserDetail = () => {
@@ -30,7 +31,7 @@ const UserDetail = () => {
   return (
     <Stack spacing={10}>
       <Stack spacing={4}>
-        <Header title="User details" editPath="edit" deleteFunction={handleOpenModal} />
+        <Header title="Details" editPath="edit" deleteFunction={handleOpenModal} />
 
         <Stack spacing={2}>
           <Stack spacing="1px">
@@ -42,6 +43,16 @@ const UserDetail = () => {
             </Stack>
             <Stack direction="row" gap={4}>
               <DetailItem label="Email" value={data?.email} isPending={isLoading} />
+            </Stack>
+            <Stack direction="row" gap={4}>
+              <DetailItem
+                label="Role"
+                status={{
+                  text: getTextRole(data?.role),
+                  color: getColorRole(data?.role),
+                }}
+                isPending={isLoading}
+              />
             </Stack>
             <Stack direction="row" gap={4}>
               <DetailItem
