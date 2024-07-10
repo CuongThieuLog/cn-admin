@@ -22,6 +22,12 @@ export const menus: MenuType[] = [
     active_icon: '/assets/svgs/user_active.svg',
   },
   {
+    href: '/movie-format',
+    title: 'Movie format',
+    icon: '/assets/svgs/transaction.svg',
+    active_icon: '/assets/svgs/transaction_active.svg',
+  },
+  {
     href: '/transactions',
     title: '取引一覧',
     icon: '/assets/svgs/transaction.svg',
