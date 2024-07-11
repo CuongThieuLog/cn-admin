@@ -2,6 +2,7 @@ import { base } from '@/libs/config/theme'
 import {
   Table as MuiTable,
   Stack,
+  styled,
   TableBody,
   TableCell,
   TableHead,
@@ -9,9 +10,9 @@ import {
   TableRow,
   Typography,
 } from '@mui/material'
-import { RowData, Row as RowType, Table, flexRender } from '@tanstack/react-table'
+import { flexRender, RowData, Row as RowType, Table } from '@tanstack/react-table'
 import SortIcon from 'public/assets/svgs/sort.svg'
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { useTableContext } from '.'
 import { TextOverflow } from '../TextOverflow'
 import { TABLE_CELL_HEADER_HEIGHT, TABLE_CELL_ROW_HEIGHT } from './ReactTable/TableRender'
@@ -47,6 +48,13 @@ function TableRenderer<T extends RowData>({
   }, [position, dataSide])
 
   const { handleSort } = useTableContext()
+
+  const StyledTableRow = styled(TableRow)`
+    &:hover {
+      background-color: #e6e6e6;
+      cursor: pointer;
+    }
+  `
 
   return (
     <>
@@ -101,32 +109,34 @@ function TableRenderer<T extends RowData>({
         ) : (
           <TableBody>
             {instance.getRowModel().rows.map((row) => (
-              <TableRow onClick={() => hasRowClick && onRowClick(row)} key={row.id}>
-                {row[tableSide.cellKey as 'getVisibleCells']().map((cell) => {
-                  const def = cell.column.columnDef
-                  const cellRender = def.cell
-                  const metaWidth = def.meta?.width
-                  const width = metaWidth ?? 'auto'
-                  const style = def.meta?.cellStyle
+              <React.Fragment key={row.id}>
+                <StyledTableRow onClick={() => hasRowClick && onRowClick(row)} key={row.id}>
+                  {row[tableSide.cellKey as 'getVisibleCells']().map((cell) => {
+                    const def = cell.column.columnDef
+                    const cellRender = def.cell
+                    const metaWidth = def.meta?.width
+                    const width = metaWidth ?? 'auto'
+                    const style = def.meta?.cellStyle
 
-                  return (
-                    <TableCell
-                      key={cell.id}
-                      width={width}
-                      height={TABLE_CELL_ROW_HEIGHT}
-                      padding="none"
-                    >
-                      {!(cell.column.id === '__action' || cell.column.id === 'status') ? (
-                        <TextOverflow width={width} color="grey.600" style={style}>
-                          {flexRender(cellRender, cell.getContext())}
-                        </TextOverflow>
-                      ) : (
-                        flexRender(cellRender, cell.getContext())
-                      )}
-                    </TableCell>
-                  )
-                })}
-              </TableRow>
+                    return (
+                      <TableCell
+                        key={cell.id}
+                        width={width}
+                        height={TABLE_CELL_ROW_HEIGHT}
+                        padding="none"
+                      >
+                        {!(cell.column.id === '__action' || cell.column.id === 'status') ? (
+                          <TextOverflow width={width} color="grey.600" style={style}>
+                            {flexRender(cellRender, cell.getContext())}
+                          </TextOverflow>
+                        ) : (
+                          flexRender(cellRender, cell.getContext())
+                        )}
+                      </TableCell>
+                    )
+                  })}
+                </StyledTableRow>
+              </React.Fragment>
             ))}
           </TableBody>
         )}

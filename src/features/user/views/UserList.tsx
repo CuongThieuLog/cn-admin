@@ -128,7 +128,6 @@ const UserList = () => {
           fontSize: 14,
           lineHeight: '20px',
           fontWeight: 400,
-          padding: '0 8px',
           textAlign: 'start',
         },
       },

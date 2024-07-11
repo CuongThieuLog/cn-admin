@@ -3,14 +3,14 @@
 import { ReactTable } from '@/libs/components/Table'
 import { ColumnDef } from '@tanstack/react-table'
 import { useRouter } from 'next/navigation'
-import { useMovieFormatListQuery } from '../hooks'
-import { MovieFormatType } from '../type'
+import { useMovieTypeListQuery } from '../hooks'
+import { MovieTypeType } from '../type'
 
-const MovieFormatList = () => {
-  const { tableData } = useMovieFormatListQuery()
+const MovieTypeList = () => {
+  const { tableData } = useMovieTypeListQuery()
   const router = useRouter()
 
-  const columns: ColumnDef<MovieFormatType>[] = [
+  const columns: ColumnDef<MovieTypeType>[] = [
     {
       header: 'ID',
       accessorKey: 'id',
@@ -54,11 +54,11 @@ const MovieFormatList = () => {
       action={{
         disabledDetail: false,
         onDetail: (id) => {
-          router.push(`/movie-format/${id}/detail`)
+          router.push(`/movie-type/${id}/detail`)
         },
       }}
     />
   )
 }
 
-export { MovieFormatList }
+export { MovieTypeList }
