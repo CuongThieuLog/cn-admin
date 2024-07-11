@@ -2,10 +2,10 @@
 
 import type { Theme } from '@mui/material'
 import { createTheme } from '@mui/material'
-import { Noto_Sans_JP } from 'next/font/google'
+import { Fira_Sans } from 'next/font/google'
 import { base, mono, statusColors } from './colors'
 
-export const notoSanJP = Noto_Sans_JP({
+export const notoSanJP = Fira_Sans({
   weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
