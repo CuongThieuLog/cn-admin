@@ -118,7 +118,7 @@ function DatePicker<T extends FieldValues>({
               borderWidth: 1,
             },
             '&& .Mui-disabled': {
-              WebkitTextFillColor: mono[200],
+              WebkitTextFillColor: value ? mono[600] : mono[200],
               borderColor: base.separate_nav + '!important',
             },
             '& .MuiOutlinedInput-input': {

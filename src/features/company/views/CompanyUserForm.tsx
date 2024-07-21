@@ -144,7 +144,7 @@ const CompanyUserForm = () => {
       href: `/company/${companyId}/detail`,
     },
     {
-      label: companyUserId ? (companyUserDetail?.name as string) : '新規登録',
+      label: companyUserId ? (companyUserDetail?.name as string) : 'Create',
     },
   ]
 

@@ -9,7 +9,7 @@ import { useMemo } from 'react'
 import { TextOverflow } from '../TextOverflow'
 
 const action: { [key: string]: string } = {
-  create: '新規登録',
+  create: 'Create',
 }
 
 export type BreadcrumbType = { label: string | number; href?: string }

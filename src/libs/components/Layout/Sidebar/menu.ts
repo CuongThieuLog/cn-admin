@@ -10,7 +10,7 @@ export type MenuType = {
 export const menus: MenuType[] = [
   {
     href: '/',
-    title: '物件一覧',
+    title: 'Dashboard',
     subHref: 'real-estate',
     icon: '/assets/svgs/property.svg',
     active_icon: '/assets/svgs/property_active.svg',
@@ -34,26 +34,32 @@ export const menus: MenuType[] = [
     active_icon: '/assets/svgs/transaction_active.svg',
   },
   {
+    href: '/person',
+    title: 'Person',
+    icon: '/assets/svgs/transaction.svg',
+    active_icon: '/assets/svgs/transaction_active.svg',
+  },
+  {
     href: '/transactions',
-    title: '取引一覧',
+    title: 'Person movie',
     icon: '/assets/svgs/transaction.svg',
     active_icon: '/assets/svgs/transaction_active.svg',
   },
   {
     href: '/company',
-    title: '不動産会社一覧',
+    title: 'Cinema',
     icon: '/assets/svgs/company.svg',
     active_icon: '/assets/svgs/company_active.svg',
   },
   {
     href: '/articles',
-    title: 'コンテンツ一覧',
+    title: 'Screen',
     icon: '/assets/svgs/article.svg',
     active_icon: '/assets/svgs/article_active.svg',
   },
   {
     href: '/admins',
-    title: '管理者一覧',
+    title: 'Food',
     icon: '/assets/svgs/admin.svg',
     active_icon: '/assets/svgs/admin_active.svg',
   },

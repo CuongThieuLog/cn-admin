@@ -2,8 +2,9 @@
   "admins": "管理者一覧",
   "articles": "コンテンツ一覧",
   "company": "不動産会社一覧",
-  "real-estate": "物件一覧",
+  "real-estate": "Dashboard",
   "users": "User",
   "movie-format": "Movie format",
-  "movie-type": "Movie type"
+  "movie-type": "Movie type",
+  "person": "Person"
 }

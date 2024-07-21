@@ -46,7 +46,7 @@ const RealEstateDetail = () => {
 
   const realEstateDetailPath: BreadcrumbType[] = [
     {
-      label: '物件一覧',
+      label: 'Dashboard',
       href: '/',
     },
     {
