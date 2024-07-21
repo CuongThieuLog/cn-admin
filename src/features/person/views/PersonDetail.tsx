@@ -6,6 +6,7 @@ import { Modal } from '@/libs/components/Modal'
 import { formatDate } from '@/utils/format'
 import { Stack } from '@mui/material'
 import { useParams, useRouter } from 'next/navigation'
+import { enqueueSnackbar } from 'notistack'
 import { useState } from 'react'
 import { useDeletePerson, usePersonDetailQuery } from '../hooks'
 
@@ -20,12 +21,14 @@ const PersonDetail = () => {
   const handleDeletePerson = () => {
     deletePerson(personId as string, {
       onSuccess: () => {
+        enqueueSnackbar('Deleted successfully!', { variant: 'success' })
         router.push('/person')
       },
     })
   }
 
   const { data, isLoading } = usePersonDetailQuery(personId as string)
+
   return (
     <Stack spacing={10}>
       <Stack spacing={4}>

@@ -6,6 +6,7 @@ import { CssBaseline } from '@mui/material'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { useServerInsertedHTML } from 'next/navigation'
+import { SnackbarProvider } from 'notistack'
 import { useState } from 'react'
 import { defaultTheme } from '../../config/theme'
 
@@ -58,6 +59,7 @@ function ThemeProvider({ children, options }: ThemeProviderProps) {
   return (
     <CacheProvider value={cache}>
       <MuiThemeProvider theme={defaultTheme}>
+        <SnackbarProvider anchorOrigin={{ vertical: 'top', horizontal: 'center' }} />
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <CssBaseline />
 

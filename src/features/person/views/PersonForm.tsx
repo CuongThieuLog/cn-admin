@@ -6,6 +6,7 @@ import { FormLayout, Input } from '@/libs/components/Form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Stack } from '@mui/material'
 import { useParams, useRouter } from 'next/navigation'
+import { enqueueSnackbar } from 'notistack'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { usePersonCreate, usePersonDetail, usePersonUpdate } from '../hooks'
 import { PersonCreateInputSchema, PersonCreateInputType } from '../type'
@@ -50,14 +51,20 @@ const PersonForm = () => {
       updatePerson(
         { id: personId as string, ...data },
         {
-          onSuccess: () => router.push(`/person/${personId}/detail`),
+          onSuccess: () => {
+            enqueueSnackbar('Updated successfully!', { variant: 'success' })
+            router.push(`/person/${personId}/detail`)
+          },
         },
       )
       return
     }
 
     createPerson(data, {
-      onSuccess: () => router.push('/person'),
+      onSuccess: () => {
+        enqueueSnackbar('Created successfully!', { variant: 'success' })
+        router.push('/person')
+      },
     })
   }
 
@@ -209,6 +216,8 @@ const PersonForm = () => {
                 },
               }}
               placeholder="Biography"
+              rows={4}
+              multiline
             />
           </Stack>
           <Stack
