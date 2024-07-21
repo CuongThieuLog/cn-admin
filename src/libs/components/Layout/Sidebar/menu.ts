@@ -11,7 +11,7 @@ export const menus: MenuType[] = [
   {
     href: '/',
     title: 'Dashboard',
-    subHref: 'real-estate',
+    subHref: 'dashboard',
     icon: '/assets/svgs/property.svg',
     active_icon: '/assets/svgs/property_active.svg',
   },

@@ -1,11 +1,11 @@
-import { RealEstateFilter, RealEstateList } from '@/features/real-estate'
+import { DashboardFilter, DashboardForm } from '@/features/dashboard'
 import { TableProvider } from '@/libs/components/Table'
 
 export default function Page() {
   return (
     <TableProvider>
-      <RealEstateFilter />
-      <RealEstateList />
+      <DashboardFilter />
+      <DashboardForm />
     </TableProvider>
   )
 }
