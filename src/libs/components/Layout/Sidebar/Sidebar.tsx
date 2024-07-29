@@ -62,6 +62,7 @@ const Sidebar = () => {
           py: '2px',
           width: '100%',
           bgcolor: 'background.white',
+          overflowY: 'auto',
         }}
         component="nav"
       >

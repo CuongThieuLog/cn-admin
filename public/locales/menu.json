@@ -7,5 +7,7 @@
   "users": "User",
   "movie-format": "Movie format",
   "movie-type": "Movie type",
-  "person": "Person"
+  "movies": "Movie",
+  "persons": "Person",
+  "person-movie": "Person movie"
 }

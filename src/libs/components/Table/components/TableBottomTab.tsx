@@ -45,7 +45,15 @@ export const defaultActionApi = {
     delete: () => {},
     title: '',
   },
-  person: {
+  movies: {
+    delete: () => {},
+    title: '',
+  },
+  persons: {
+    delete: () => {},
+    title: '',
+  },
+  'person-movie': {
     delete: () => {},
     title: '',
   },

@@ -34,13 +34,19 @@ export const menus: MenuType[] = [
     active_icon: '/assets/svgs/transaction_active.svg',
   },
   {
-    href: '/person',
+    href: '/movies',
+    title: 'Movie',
+    icon: '/assets/svgs/article.svg',
+    active_icon: '/assets/svgs/article_active.svg',
+  },
+  {
+    href: '/persons',
     title: 'Person',
     icon: '/assets/svgs/transaction.svg',
     active_icon: '/assets/svgs/transaction_active.svg',
   },
   {
-    href: '/transactions',
+    href: '/person-movie',
     title: 'Person movie',
     icon: '/assets/svgs/transaction.svg',
     active_icon: '/assets/svgs/transaction_active.svg',
@@ -56,11 +62,5 @@ export const menus: MenuType[] = [
     title: 'Screen',
     icon: '/assets/svgs/article.svg',
     active_icon: '/assets/svgs/article_active.svg',
-  },
-  {
-    href: '/admins',
-    title: 'Food',
-    icon: '/assets/svgs/admin.svg',
-    active_icon: '/assets/svgs/admin_active.svg',
   },
 ]
